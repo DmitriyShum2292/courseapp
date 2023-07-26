@@ -1,0 +1,26 @@
+cloud:
+  aws:
+    credentials:
+      access-key: AKIAWCF7PLRLIVN4KNOF
+      secret-key: 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
+      sns-topic-arn: arn:aws:sns:us-east-1:417013390422:task8-upload-notification-topic
+    end-point:
+      uri: https://sqs.us-east-1.amazonaws.com/417013390422/task8-upload-notification-queue
+    region:
+      static: us-east-1
+    stack:
+      auto: false
+    function-arn: arn:aws:lambda:us-east-1:417013390422:function:CourseApp-uploads-batch-notifier
+
+application:
+  bucket:
+    name: course-bucket-app-db
+
+
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2MB
+      max-file-size: 5MB
+      max-request-size: 10MB
